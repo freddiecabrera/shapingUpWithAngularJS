@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1/prototype.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+
+
+
+
+
+
+
+
+
+  <body ng-app='store'>
+
+
+
+
+
+
+
+    <div ng-controller='StoreController as store'>
+      <ul class='list-group'>
+        <li class='list-group-item' ng-repeat='product in store.products'>
+          <h3>
+            {{product.name}}
+            <em class='pull-right'>{{product.price | currency}}</em>
+            <img ng-src='{{ product.images}}'/>
+          </h3>
+          <section>
+            <ul class='nav nav-pills'>
+              <li> <a href ng-click='tab = 1'> Description </a> </li>
+              <li> <a href ng-click='tab = 2'> Specifications </a> </li>
+              <li> <a href ng-click='tab = 3'> Reviews </a> </li>
+            </ul>
+            {{tab}}
+            <div class='panel'>
+              <h4>Description</h4>
+              <p> {{ product.description }}</p>
+            </div>
+            <div class='panel'>
+              <h4> Specifications </h4>
+              <blockquote> None yet </blockquote>
+            </div>
+            <div class='panel'>
+              <h4> Reviews </h4>
+              <blockquote> None yet </blockquote>
+            </div>
+          </section>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+    </html>
